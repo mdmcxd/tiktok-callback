@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<body style="font-family: Arial; padding: 20px;">
+<h2>TikTok OAuth Callback</h2>
+<p>Якщо бачиш цей екран — callback працює.</p>
+<pre id="out"></pre>
+<script>
+const u = new URL(window.location.href);
+const code = u.searchParams.get("code");
+const state = u.searchParams.get("state");
+document.getElementById("out").textContent =
+"FULL URL: " + window.location.href + "\n\nCODE: " + (code || "(none)") + "\nSTATE: " + (state || "(none)");
+</script>
+</body>
+</html>
